@@ -1,0 +1,54 @@
+.page-gifts {
+    .gifts {
+        &__container {
+            @include container;
+            @include background-container;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: $gap-big;
+            background-image: url(../img/gifts-garland.png);
+            background-position: top;
+            background-size: contain;
+            border-radius: 20px;
+                    
+            ul {
+                display: flex;
+                gap: $gap-middle;
+
+                li button {
+                    @include action-small;
+                    padding: 12px 20px;
+                    border-radius: 12px;
+                    color: var(--color-static-white);
+                    
+                    @media (hover: hover) {
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background-color: $color-static-white-20;
+                            transition: background-color 0.3s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+
+        h1 {
+            @include header-1;
+            max-width: 426px;
+            text-align: center;
+            color: $color-static-white;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            &__filter {
+                column-gap: 4px;
+
+                li button {
+                    padding: 12px 8px;
+                }
+            }
+        }
+    }
+}

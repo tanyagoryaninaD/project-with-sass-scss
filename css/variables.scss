@@ -1,0 +1,32 @@
+$color-dark: #181C29;
+$color-overlay: #181C29CC;
+$color-primary: #FF4646;
+$color-primary-10: #FF46461A;
+$color-static-white: #FFFFFF;
+$color-static-white-40: #FFFFFF66;
+$color-static-white-20: #FFFFFF33;
+$color-tag-purple: #4361FF;
+$color-tag-pink: #FF43F7;
+$color-tag-green: #06A44F;
+$color-content-background: #ECF3F8;
+
+$padding-section-horizontal: 82px;
+$padding-section-vertical: 60px;
+$gap-big: 20px;
+$gap-middle: 12px;
+$gap-small: 8px;
+
+$breakpoint-xs: 380px;
+$breakpoint-sm: 680px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 920px;
+$breakpoint-xl: 1070px;
+$breakpoint-xxl: 1439px;
+
+@media (max-width: $breakpoint-xl) {
+    $padding-section-horizontal: 20px;
+}
+
+@media (max-width: $breakpoint-lg) {
+    $padding-section-horizontal: 8px;
+}

@@ -1,0 +1,120 @@
+.footer {
+    &__container {
+        @include container;
+        background-color: $color-static-white;
+    }
+    
+    &__list-contacts {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 60px;
+
+        li {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: $gap-middle;
+            width: 100%;
+            max-width: 417.33px;
+            min-height: 204px;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: $color-content-background;
+
+            a {
+                @include action-large;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                }
+                
+                @media (hover: hover) {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        outline: transparent;
+                        color: $color-primary;
+                        transition: color 0.3s ease-in-out;
+                    }
+
+                    &:hover ~ p,
+                    &:focus ~ p,
+                    &:active ~ p {
+                        outline: transparent;
+                        color: $color-primary;
+                        transition: color 0.3s ease-in-out;
+                    }
+                }
+            }
+
+            p {
+                @include header-3;
+            }
+        }
+
+        @media (max-width: $breakpoint-xxl) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 12px;
+            margin-bottom: 66px;
+
+            li {
+                max-width: 100%;
+            }
+        }
+    }
+    
+    &__social-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: $gap-small;
+        padding: 10px;
+        text-align: center;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            column-gap: $gap-middle;
+
+            li {
+                position: relative;
+                width: 40px;
+                height: 40px;
+
+                a {
+                    outline: transparent;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    @media (hover: hover) {
+                        &:hover svg path,
+                        &:focus svg path,
+                        &:active svg path {
+                            outline: transparent;
+                            stroke: $color-primary;
+                            transition: stroke 0.3s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $breakpoint-xxl) {
+            padding: 0;
+        }
+    }
+}

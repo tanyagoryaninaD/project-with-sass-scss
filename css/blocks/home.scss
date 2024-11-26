@@ -1,0 +1,343 @@
+.hero {
+    &__container {
+        @include container;
+        @include background-container;
+        display: flex;
+        justify-content: center;
+        background-image: url(../img/hero-snow.png), url(../img/hero-ball.png);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: $gap-middle;
+        max-width: 430px;
+        max-height: 528px;
+        padding: 60px 0 60px 0;
+        color: $color-static-white;
+
+        h1 {
+            @include header-1;
+        }
+
+        a {
+            @include action-small;
+            display: block;
+            padding: 21px 34px;
+            border-radius: 20px;
+            color: $color-static-white;
+            background-color: $color-dark;
+
+            @media (max-width: $breakpoint-md) {
+                padding: 20px 31px;
+            }
+
+            @media (hover: hover) {
+                &:hover,
+                &:focus,
+                &:active {
+                    outline: transparent;
+                    background-color: $color-static-white;
+                    color: $color-dark;
+                    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+                }
+            }
+        }
+
+
+    }
+}
+
+.about {
+    &__container {
+        @include container;
+        @include background-container;
+        background-image: url(../img/about-snow.png);
+        color: $color-dark;
+    }
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        max-height: 528px;
+        border-radius: 20px;
+        background-color: $color-static-white;
+
+        @media (max-width: $breakpoint-sm) {
+            flex-direction: column;
+            max-height: 100%;
+        }
+    }
+    
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: $gap-big;
+        max-width: 426px;
+        margin: 100px 60px;
+        
+        @media (max-width: $breakpoint-lg) {
+            max-width: 326px;
+            margin: 100px 30px;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            max-width: 256px;
+            margin: 106px 60px;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            max-width: 100%;
+            margin: 60px 30px;
+        }
+
+        @media (max-width: $breakpoint-xs) {
+            margin: 60px 20px;
+        }
+
+        .caption {
+            color: $color-primary;
+        }
+    }
+    
+    &__img {
+        @media (max-width: $breakpoint-sm) {
+            height: 528px;
+        }
+    }
+    
+    &__img img {
+        height: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+
+        @media (max-width: $breakpoint-sm) {
+            width: 100%;
+        }
+    }
+}
+
+.slider {
+    &__container {
+        @include container;
+        @include background-container;
+        position: relative;
+        overflow: hidden;
+        background-image: url(../img/about-snow.png);
+    }
+    
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: $gap-middle;
+        margin-bottom: 20px;
+
+        h2 {
+            @include header-2;
+        }
+    }
+    
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        row-gap: $gap-big;
+        height: 280px;
+
+        ul {
+            position: absolute;
+            top: 150px;
+            display: inline-flex;
+            align-items: center;
+            column-gap: $gap-big;
+
+            li p {
+                @include slider-text;
+            }
+
+            li img {
+                @include slider-text;
+                min-width: 200px;
+                border-radius: 20px;
+                object-fit: cover;
+            }
+
+            @media (max-width: $breakpoint-md) {
+                top: 153px;
+            }
+        }
+                
+        &__buttons {
+            display: flex;
+            justify-content: flex-end;
+            column-gap: $gap-middle;
+
+            button {
+                width: 56px;
+                height: 56px;
+                padding: 20px;
+                border: 1px solid $color-static-white;
+                border-radius: 20px;
+                transition: background-color 0.3s ease-in-out;
+                
+                &:disabled{
+                    border: 1px solid $color-static-white-40;
+                }
+
+                @media (hover: hover) {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        outline: transparent;
+                        background-color: $color-static-white;
+                    }
+
+                    &:hover svg path,
+                    &:focus svg path,
+                    &:active svg path {
+                        outline: transparent;
+                        stroke: $color-primary;
+                        transition: stroke 0.3s ease-in-out;
+                    }
+                
+                    &:disabled:hover {
+                        border: 1px solid $color-static-white-40;
+                        background-color: transparent;
+                    }
+                
+                    &:disabled:hover svg path {
+                        stroke: $color-static-white;
+                    }
+                }
+            }
+
+            @media (max-width: $breakpoint-md) {
+                column-gap: $gap-big;
+            }
+        }
+
+        @media (max-width: $breakpoint-md) {
+            height: 274px;
+        }
+    }
+}
+
+.best-gifts {
+    &__container {
+        @include container;
+        @include background-container;
+        background-image: url(../img/bestGifts-snow.png);
+    }
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        row-gap: $gap-small;
+        align-items: center;
+        margin-bottom: 18px;
+
+        h2 {
+            @include header-2;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            row-gap: 16px;
+        }
+    }
+}
+
+.cta {
+    &__container {
+        @include container;
+        @include background-container;
+        display: flex;
+        justify-content: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-image: url(../img/cta-snow.png), url(../img/cta-forest.png);
+    }
+    
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: $gap-big;
+        max-width: 426px;
+        margin: 60px 0;
+        padding: 60px 0;
+
+        h2 {
+            @include header-2;
+            text-align: center;
+        }
+
+        a {
+            @include action-small;
+            display: block;
+            padding: 20px 32px;
+            border-radius: 20px;
+            background-color: $color-dark;
+            color: $color-static-white;
+
+            @media (hover: hover) {
+                &:hover,
+                &:focus,
+                &:active {
+                    outline: transparent;
+                    background-color: $color-static-white;
+                    color: $color-dark;
+                    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+                }
+            }
+        }
+
+        &__counting {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+
+            ul {
+                display: flex;
+                align-items: center;
+                padding: 9px 12px;
+                border-radius: 20px;
+                background-color: $color-static-white-40;        
+            
+                li {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    min-width: 80px;
+                    height: 52px;
+                    text-align: center;
+
+                    .text {
+                        .number {
+                            @include header-2
+                        }
+
+                        .desc {
+                            @include header-4
+                        }
+                    }
+                }
+
+                li:nth-child(even) {
+                    width: 100%;
+                    min-width: 0;
+
+                    hr {
+                        height: 20px;
+                        border: 1px solid $color-static-white-40;
+                    }
+                }
+            }
+        }
+    }
+}

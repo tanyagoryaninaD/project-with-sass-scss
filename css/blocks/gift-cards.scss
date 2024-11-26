@@ -1,0 +1,86 @@
+.gift-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $gap-middle;
+        color: $color-dark;
+
+        li {
+            position: relative;
+            min-width: 310px;
+            min-height: 342px;
+            border-radius: 20px;
+            background-color: $color-content-background;
+        
+            a {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                outline: transparent;
+
+                .desc {
+                    background-color: $color-static-white;
+                    min-height: 112px;
+                    padding: 14px 20px;
+                    border-radius: 24px;
+
+                    p {
+                        @include header-4;
+                        margin-bottom: 8px;
+                    }
+
+                    h3 {
+                        @include header-3;
+                    }
+
+                    @media (max-width: $breakpoint-md) {
+                        padding: 21px 20px;
+                    }
+                }
+
+                @media (hover: hover) {
+                    &:hover h3,
+                    &:focus h3,
+                    &:active h3 {
+                        color: $color-primary;
+                        transition: color 0.3s ease-in-out;
+                    }
+                }
+            }
+        
+        @media (max-width: $breakpoint-xxl) {
+            .page-home & {
+                grid-template-columns: repeat(2, 310px);
+            }
+            .page-gifts & {
+                grid-template-columns: repeat(3, 310px);
+            }
+        }
+        
+        @media (max-width: $breakpoint-xl) {
+            grid-template-columns: repeat(2, 310px);
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            grid-template-columns: 310px;
+        }
+    }
+    
+    .work {
+        color: $color-tag-purple;
+    }
+    
+    .health {
+        color: $color-tag-green;
+    }
+    
+    .harmony {
+        color: $color-tag-pink;
+    }
+}

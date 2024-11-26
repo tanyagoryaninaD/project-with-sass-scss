@@ -1,0 +1,49 @@
+.header {
+    @include action-small;
+
+    &__container {
+        @include container;
+        display: flex;
+        justify-content: space-between;
+        padding: 12px $padding-section-horizontal;
+    }
+
+    &__logo {
+        a {
+            display: flex;
+            align-items: center;
+            column-gap: $gap-small;
+            padding: 8px 20px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+
+        ul {
+            display: flex;
+            column-gap: $gap-small;
+
+            li a {
+                padding: 12px 20px;
+                border-radius: 12px;
+
+                @media (hover: hover) {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        outline: transparent;
+                        background-color: $color-primary-10;
+                        color: $color-primary;
+                        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+                    }
+                }
+            }
+
+            @media (max-width: $breakpoint-md) {
+                display: none;
+            }
+        }
+    }
+}

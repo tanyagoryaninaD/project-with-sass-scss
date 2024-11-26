@@ -1,0 +1,77 @@
+@mixin container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: $padding-section-vertical $padding-section-horizontal;
+}
+
+@mixin background-container {
+    background-color: $color-primary;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: $color-static-white;
+}
+
+@mixin header-1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0.18em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@mixin header-2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36.48px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+@mixin header-3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24.32px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@mixin header-4 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.6px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+@mixin action-large {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36.48px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+@mixin action-small {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.6px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+@mixin caption {
+    font-family: 'Allura';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+}
+
+@mixin slider-text {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 97.52px;
+    text-transform: uppercase;
+}
